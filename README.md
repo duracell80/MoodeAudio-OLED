@@ -27,15 +27,14 @@ Installation
 7. Go to MoodAudio UI menu -> Configure -> System -> Local Services
    Enable the metadata file (currentsong.txt) and toggle the LCD Update Engine on <br />
 8. Add startup script to /etc/profile.d<br /><br />
-sudo cp /home/pi/MoodeAudio-OLED/moode-oled-startup.sh /etc/profile.d/<br /><br />
+   $sudo cp /home/pi/MoodeAudio-OLED/moode-oled-startup.sh /etc/profile.d/<br /><br />
 
-The script upon startup will display the splashscreen<br />
-python /home/pi/MoodeAudio-OLED/moode-oled-splash.py <br /><br />
+   The script upon startup will display the splashscreen<br />
+   python /home/pi/MoodeAudio-OLED/moode-oled-splash.py <br /><br />
 
-Which will linger for 15 seconds or more before running the oled-mod script<br />
-python /home/pi/MoodeAudio-OLED/moode-oled-mod.py &
+   Which will linger for 15 seconds or more before running the oled-mod script<br />
+   python /home/pi/MoodeAudio-OLED/moode-oled-mod.py &
 
-9. Optional: Use this script on a GPIO pin (9) in Moode to shutdown the OLED and then the system on button press. OR use the script in your favouirte place to safely shutdown the pi<br />
-/home/pi/MoodeAudio-OLED/moode-oled-shutdown.sh <br /><br />
+9. Optional: Use moode-oled-shutdown.sh script on a GPIO pin (9) in Moode to shutdown the OLED and then the system on button press. Do this by going in the Moode Web UI to Configure -> System -> GPIO Button Handler -> Edit. OR use the script in your favouirte place to safely shutdown the pi
 
 
