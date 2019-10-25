@@ -10,7 +10,7 @@ Let see on Youtube <br />
 Installation
 
 1. Login to MoodeAudio with user pi and password moodeaudio
-2. Ran raspi-config and enabled i2c
+2. Ran raspi-config and enabled i2c and auto login
 3. Prerequites <br />
    $ sudo apt-get update <br />
    $ sudo apt-get install build-essential python-pip python-dev python-smbus git python-imaging python-mpd<br />
@@ -24,7 +24,18 @@ Installation
    $ sudo python setup.py install <br />
 6. Download python script from github <br />
    $ git clone https://github.com/naisema/MoodeAudio-OLED.git <br />
-7. Go to MoodAudio UI menu -> Configure -> System -> Local Services -> LCD update engine
-   fille full path of python script. On button and apply SET <br />
-   ![ScreenShot](https://github.com/naisema/MoodeAudio-OLED/blob/developer/Python_LCD_setup.jpg?raw=true "Python LCD setup")
-8. Display can show song information
+7. Go to MoodAudio UI menu -> Configure -> System -> Local Services
+   Enable the metadata file (currentsong.txt) and toggle the LCD Update Engine on <br />
+8. Add startup script to /etc/profile.d<br /><br />
+> sudo cp /home/pi/MoodeAudio-OLED/moode-oled-startup.sh /etc/profile.d/<br /><br />
+
+The script upon startup will display the splashscreen<br />
+> python /home/pi/MoodeAudio-OLED/moode-oled-splash.py <br /><br />
+
+Which will linger for 15 seconds or more before running the oled-mod script<br />
+> python /home/pi/MoodeAudio-OLED/moode-oled-mod.py &
+
+9. Optional: Use this script on a GPIO pin (9) in Moode to shutdown the OLED and then the system on button press <br />
+/home/pi/MoodeAudio-OLED/moode-oled-shutdown.sh <br /><br />
+
+OR use the script in your favouirte place to safely shutdown the pi
