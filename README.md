@@ -9,11 +9,7 @@ This is a forked version of the original script with some major tweaks that make
 3. There is now a slashscreen on loading that shows the Moode logo!
 4. A shutdown screen with countdown that can be tied to a GPIO pin
 
-![ScreenShot](https://github.com/naisema/MoodeAudio-OLED/blob/developer/OLED%20128x64.jpg?raw=true "OLED 128x64 Display")
-<br />
-Let see on Youtube <br />
-[![OLED 128x64 Display](https://img.youtube.com/vi/ZFla1naHdzA/0.jpg)](https://www.youtube.com/watch?v=ZFla1naHdzA "OLED 126x64 Display")
-<br />
+<br><br><br>
 
 <strong>Installation</strong>
 
@@ -46,4 +42,4 @@ Let see on Youtube <br />
 9. Optional: Use moode-oled-shutdown.sh script on a GPIO pin (9) in Moode to shutdown the OLED and then the system on button press. Do this by going in the Moode Web UI to Configure -> System -> GPIO Button Handler -> Edit. OR use the script in your favouirte place to safely shutdown the pi. The shutdown -h now command is commented out for your safety but the screen should show a countdown timer and bring down the volume in a fade out fashion.
 <br><br><br>
 
-NOTE: If the original script this was fork from is still running, the modifed script will seek the PID of that script and kill it because having the main screen script run multiple times causes the "weird characters" on the display. If this is occuring it's because there are multiple scripts trying to update the same screen once a second. Search your favorite search engine for process kill commands.
+NOTE: The original script remains in this repo, the new one has -mod at the end of the filename. If the original script this was forked from is still running, the modifed script will seek the PID of that script and kill it because having the main screen script run multiple times causes the "weird characters" on the display. The shutdown script also tries to kill the process of the main script. If these screen glitches are occuring it's because there are multiple scripts trying to update the same screen once a second. Search your favorite search engine for process kill commands.
