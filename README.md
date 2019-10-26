@@ -1,4 +1,4 @@
-# MoodeAudio-OLED 2020
+# MoodeAudio-OLED For Internet Radio Projects
 OLED 128x64 for MoodeAudio
 
 This is a forked version of the original script by naisema with some major tweaks that make the OLED screen output more useful for Internet Radio usage in a hardware project. I gutted the inside of a broken iView ATSC Box in testing. To get the best out of this script cue up your favourite radio stations in a saved playlist so that Moode can feel like a radio device.<br /><br />
@@ -69,3 +69,7 @@ $ sudo pkill -f "python /home/pi/MoodeAudio-OLED/moode-oled-mod.py" & python moo
 
 If you're editing the bash files in Windows there may be some line end issues, fix these with sed<br>
 $ sed -i -e 's/\r$//' ./*.sh
+
+# Todo List
+1. Make scripts robust for 32p resolution
+2. Add choice of splashscreens
