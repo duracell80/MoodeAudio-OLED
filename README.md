@@ -60,4 +60,7 @@ Select Finish, and reboot the pi.
 NOTE: The original script remains in this repo, the new one has -mod at the end of the filename. If the original script this was forked from is still running, the modifed script can seek the PID of that script and kill it. Having the main screen script run multiple times causes the "weird characters" on the display. The shutdown script also tries to kill the process of the main script for this reason. If these screen glitches are occuring it's because there are multiple scripts trying to update the same screen once a second. Search your favorite search engine for process kill commands.<br><br>
 
 A helpful command to rescue the screen is<br>
-$ sudo pkill -f "python /home/pi/MoodeAudio-OLED/moode-oled-mod.py" & python moode-oled-clear.py
+$ sudo pkill -f "python /home/pi/MoodeAudio-OLED/moode-oled-mod.py" & python moode-oled-clear.py <br><br>
+
+If you're editing the batch files in Windows there may be some line end issues, fix these with this sed in the MoodeAudio-OLED directory<br>
+$ sed -i -e 's/\r$//' ./*.sh
