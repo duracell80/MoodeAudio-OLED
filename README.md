@@ -5,9 +5,10 @@ This is a forked version of the original script with some major tweaks that make
 
 <strong>Tweaks</strong><br>
 1. Better handling of metadata from radio stations<br>
-2. When "changing stations" the screen will say "Tuning ..."
-3. There is now a slashscreen on loading that shows the Moode logo!
-4. A shutdown screen with countdown that can be tied to a GPIO pin
+2. When "changing stations" the screen will say "Tuning ..."<br>
+3. Splashscreen on loading that shows the Moode logo!<br>
+4. Display of hostname and IP Address when MPD state shows no media playing<br>
+5. Shutdown screen with countdown that can be tied to a GPIO pin
 
 <br><br><br>
 
