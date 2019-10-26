@@ -1,6 +1,6 @@
 #!/usr/bin/python
-# Author: Suwat Saisema
-# Date: 5-Oct-2017
+# Author: Lee Jordan
+# Date: 25-Oct-2019
 
 
 import sys
@@ -10,8 +10,6 @@ import re
 import os
 from socket import error as socket_error
 
-# Delay First Run So That MPD Has Chance To Start
-# time.sleep(30)
 
 # Adafruit Library
 import Adafruit_GPIO.SPI as SPI
