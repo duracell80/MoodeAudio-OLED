@@ -7,4 +7,4 @@ python /home/pi/MoodeAudio-OLED/moode-oled-shutdown.py
 
 mpc stop
 
-sudo shutdown -h now
+#sudo shutdown -h now
