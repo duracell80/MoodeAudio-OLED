@@ -1,4 +1,4 @@
-# MoodeAudio-OLED
+# MoodeAudio-OLED 2020
 OLED 128x64 for MoodeAudio
 
 This is a forked version of the original script by naisema with some major tweaks that make the OLED screen output more useful for Internet Radio usage in a hardware project. I gutted the inside of a broken iView ATSC Box in testing. To get the best out of this script cue up your favourite radio stations in a saved playlist so that Moode can feel like a radio device.<br /><br />
