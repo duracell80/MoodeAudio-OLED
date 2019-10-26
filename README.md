@@ -49,7 +49,7 @@ Select Finish, and reboot the pi.
    Which will linger for 15 seconds or more before running the main oled-mod script<br />
    $ python /home/pi/MoodeAudio-OLED/moode-oled-mod.py &
 
-9. Optional: Use moode-oled-shutdown.sh script on a GPIO pin (9) in Moode to shutdown the OLED and then the system on button press. Do this by going in the Moode Web UI to Configure -> System -> GPIO Button Handler -> Edit. OR use the script in your favouirte place to safely shutdown the pi. The shutdown -h now command is commented out for your safety but the screen should show a countdown timer and bring down the volume in a fade out fashion.
+9. Optional: Use moode-oled-shutdown.sh script on a GPIO pin (9) in Moode to shutdown the OLED and then the system on button press. Do this by going in the Moode Web UI to Configure -> System -> GPIO Button Handler -> Edit. OR use the script in your favouirte place to safely shutdown the pi. The shutdown -h now command is commented out for your convenience but the screen should show a countdown timer and bring down the volume in a fade out fashion.
 <br><br><br>
 
 NOTE: The original script remains in this repo, the new one has -mod at the end of the filename. If the original script this was forked from is still running, the modifed script can seek the PID of that script and kill it. Having the main screen script run multiple times causes the "weird characters" on the display. The shutdown script also tries to kill the process of the main script for this reason. If these screen glitches are occuring it's because there are multiple scripts trying to update the same screen once a second. Search your favorite search engine for process kill commands.<br><br>
