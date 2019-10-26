@@ -3,6 +3,8 @@ OLED 128x64 for MoodeAudio
 
 This is a forked version of the original script with some major tweaks that make the OLED screen output more useful for Internet Radio usage. To get the best out of this script cue up your favourite radio stations in a saved playlist so that Moode can feel like a radio device.<br /><br />
 
+![New Splashscreen](https://raw.githubusercontent.com/duracell80/MoodeAudio-OLED/master/example-splash.jpg)
+
 <strong>Tweaks</strong><br>
 1. Updated install instructions for Moode 6
 2. Better handling of metadata from radio stations<br>
@@ -13,7 +15,7 @@ This is a forked version of the original script with some major tweaks that make
 
 <br><br><br>
 
-<strong>Installation</strong>
+# Installation
 
 1. Login to MoodeAudio with user pi and password moodeaudio
 2. Ran raspi-config and enabled i2c and auto login<br><br>
@@ -52,6 +54,7 @@ Select Finish, and reboot the pi.
 9. Optional: Use moode-oled-shutdown.sh script on a GPIO pin (9) in Moode to shutdown the OLED and then the system on button press. Do this by going in the Moode Web UI to Configure -> System -> GPIO Button Handler -> Edit. OR use the script in your favouirte place to safely shutdown the pi. The shutdown -h now command is commented out for your convenience but the screen should show a countdown timer and bring down the volume in a fade out fashion.
 <br><br><br>
 
+# Notes
 NOTE: The original script remains in this repo, the new one has -mod at the end of the filename. If the original script this was forked from is still running, the modifed script can seek the PID of that script and kill it. Having the main screen script run multiple times causes the "weird characters" on the display. The shutdown script also tries to kill the process of the main script for this reason. If these screen glitches are occuring it's because there are multiple scripts trying to update the same screen once a second. Search your favorite search engine for process kill commands.<br><br>
 
 A helpful command to rescue the screen is<br>
