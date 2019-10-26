@@ -153,7 +153,7 @@ class MPDConnect(object):
             if len(nowplayingmeta) > 0:
                 callsign  = nowplayingmeta[1]
             else:
-                callsign  = "iNet Radio" 
+                callsign  = "Radio station" 
         
         if 'Radio station' in callsign:
             
@@ -191,7 +191,7 @@ class MPDConnect(object):
             
             
 
-            # Re-assign Artist as Station Name and Remove Brackets eg (320) or [SomaFM]
+            # Re-assign Artist as Station Name and Remove Brackets eg (320kbps) or [SomaFM]
             artist = re.sub("[\(\[].*?[\)\]]", "", station_name)
             
             
