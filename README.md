@@ -3,7 +3,7 @@ OLED 128x64 for MoodeAudio
 
 This is a forked version of the original script with some major tweaks that make the OLED screen output more useful for Internet Radio usage. To get the best out of this script cue up your favourite radio stations in a saved playlist so that Moode can feel like a radio device.<br /><br />
 
-![New Splashscreen](https://raw.githubusercontent.com/duracell80/MoodeAudio-OLED/master/example-splash.jpg)
+![Playing State](https://raw.githubusercontent.com/duracell80/MoodeAudio-OLED/master/example-playing-state.jpg)
 
 <strong>Tweaks</strong><br>
 1. Updated install instructions for Moode 6
@@ -12,6 +12,8 @@ This is a forked version of the original script with some major tweaks that make
 4. Splashscreen on loading that shows the Moode logo!<br>
 5. Display of hostname and IP Address when MPD state shows no media playing<br>
 6. Shutdown screen with countdown that can be tied to a GPIO pin
+
+![New Splashscreen](https://raw.githubusercontent.com/duracell80/MoodeAudio-OLED/master/example-splash.jpg)
 
 <br><br><br>
 
