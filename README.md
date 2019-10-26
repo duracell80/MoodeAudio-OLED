@@ -43,7 +43,12 @@ Select Finish, and reboot the pi.
 6. Download python script from github <br />
    $ git clone https://github.com/naisema/MoodeAudio-OLED.git <br />
 7. Go to MoodAudio UI menu -> Configure -> System -> Local Services
-   Enable the metadata file (currentsong.txt) and toggle the LCD Update Engine on <br />
+   Enable the metadata file (currentsong.txt) and toggle the LCD Update Engine on <br /><br />
+
+
+![Moode Metadata Settings](https://raw.githubusercontent.com/duracell80/MoodeAudio-OLED/master/Python_LCD_setup.jpg) <br />
+   
+   
 8. Add startup script to /etc/profile.d<br /><br />
    $ sudo cp /home/pi/MoodeAudio-OLED/moode-oled-startup.sh /etc/profile.d/<br /><br />
 
