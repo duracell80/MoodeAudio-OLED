@@ -62,5 +62,5 @@ NOTE: The original script remains in this repo, the new one has -mod at the end 
 A helpful command to rescue the screen is<br>
 $ sudo pkill -f "python /home/pi/MoodeAudio-OLED/moode-oled-mod.py" & python moode-oled-clear.py <br><br>
 
-If you're editing the batch files in Windows there may be some line end issues, fix these with sed<br>
+If you're editing the bash files in Windows there may be some line end issues, fix these with sed<br>
 $ sed -i -e 's/\r$//' ./*.sh
