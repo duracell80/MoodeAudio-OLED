@@ -1,7 +1,7 @@
 # MoodeAudio-OLED
 OLED 128x64 for MoodeAudio
 
-This is a forked version of the original script with some major tweaks that make the OLED screen output more useful for Internet Radio usage. To get the best out of this script cue up your favourite radio stations in a saved playlist so that Moode can feel like a radio device.<br /><br />
+This is a forked version of the original script by naisema with some major tweaks that make the OLED screen output more useful for Internet Radio usage in a hardware project. I gutted the inside of a broken iView ATSC Box in testing. To get the best out of this script cue up your favourite radio stations in a saved playlist so that Moode can feel like a radio device.<br /><br />
 
 ![Playing State](https://raw.githubusercontent.com/duracell80/MoodeAudio-OLED/master/example-playing-state.jpg)
 
