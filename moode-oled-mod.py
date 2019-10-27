@@ -11,7 +11,7 @@ import os
 from socket import error as socket_error
 
 # Delay First Run So That MPD Has Chance To Start
-time.sleep(15)
+# time.sleep(15)
 
 # Adafruit Library
 import Adafruit_GPIO.SPI as SPI
@@ -45,6 +45,7 @@ s.connect(("1.1.1.1", 80))
 
 hostname   = socket.gethostname()
 hostip     = s.getsockname()[0]
+
 
 # MPD Client
 class MPDConnect(object):
@@ -101,8 +102,7 @@ class MPDConnect(object):
         
             
         # Volume
-        vol = song_stats['volume']
-        
+        vol         = song_stats['volume']
         
         # Set some asignments to prevent logic crashes
         bitrate_display = ""
@@ -167,7 +167,7 @@ class MPDConnect(object):
                 # Replace With AP
                 station_name   = station_long.replace("Audiophile", "AP - ")
             elif 'France Musique' in station_long:
-                # Replace With AP
+                # Replace With FM
                 station_name   = station_long.replace("France Musique", "FM - ")
             elif 'Soma FM' in station_long:
                 # Split On Dash
@@ -245,7 +245,7 @@ class MPDConnect(object):
         
             
             # Still Radio Let's Kick It Up A Level with Tuning Message
-            if tunetime < 1.5:
+            if tunetime < 1.25:
                 title           = "Tuning ..."
                 artist          = ""
 
@@ -364,12 +364,18 @@ def main():
             audiox = 2
 
         if state == 'stop':
+            # Sample CPU Temp When Stopped
+            kitchen = os.popen("vcgencmd measure_temp").readline()
+            oven    = kitchen.split("=")
+            rack    = oven[1].split(".")
+            pibaked = rack[0]
+            
             # Draw text
             draw.text((35,top), hostname, font=font_artist, fill=255)
             draw.text((20,20), hostip, font=font_time, fill=255)
             draw.text((audiox,35), "", font=font_title, fill=255)
             draw.text((padding,45), "Stopped", font=font_time, fill=255)
-            draw.text((75,45), "vol: " +  str(vol) , font=font_time, fill=255)
+            draw.text((75,45), "cpu: " +  str(pibaked) , font=font_time, fill=255)
         else:
             # Draw text.
             draw.text((artx,top), unicode(artist), font=font_artist, fill=255)
