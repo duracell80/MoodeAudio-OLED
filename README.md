@@ -75,5 +75,5 @@ If you're editing the bash files in Windows there may be some line end issues, f
 $ sed -i -e 's/\r$//' ./*.sh
 
 # Todo List
-1. Make scripts robust for 32p resolution
+1. Make scripts robust for 32p resolution (add bitrate / station name and now playing onto one scrolling line)
 2. Add choice of splashscreens
