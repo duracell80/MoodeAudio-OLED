@@ -15,6 +15,10 @@ This is a forked version of the original script by naisema with some major tweak
 
 ![New Splashscreen](https://raw.githubusercontent.com/duracell80/MoodeAudio-OLED/master/example-splash.jpg)
 
+<br><br>
+
+![Host Details On Stop](https://raw.githubusercontent.com/duracell80/MoodeAudio-OLED/master/example-host-details.jpg) <br />
+
 <br><br><br>
 
 # Installation
