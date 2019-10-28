@@ -52,9 +52,14 @@ Select Finish, and reboot the pi.
 
 
 ![Moode Metadata Settings](https://raw.githubusercontent.com/duracell80/MoodeAudio-OLED/master/Python_LCD_setup.jpg) <br />
+
+8. NEW! Instead of displaying time elapsed the script can display session data usage.
+   $ sudo touch /var/local/www/currentdata.txt
+   $ sudo chmod 777 /var/local/www/currentdata.txt
+
+
    
-   
-8. Add startup script to /etc/profile.d<br /><br />
+9. Add startup script to /etc/profile.d<br /><br />
    $ sudo cp /home/pi/MoodeAudio-OLED/moode-oled-startup.sh /etc/profile.d/<br /><br />
 
    The script upon startup will display the splashscreen<br />
@@ -63,10 +68,12 @@ Select Finish, and reboot the pi.
    Which will linger for 15 seconds or more before running the main oled-mod script<br />
    $ python /home/pi/MoodeAudio-OLED/moode-oled-mod.py &
 
-9. Optional: Use moode-oled-shutdown.sh script on a GPIO pin (9) in Moode to shutdown the OLED and then the system on button press. Do this by going in the Moode Web UI to Configure -> System -> GPIO Button Handler -> Edit. OR use the script in your favouirte place to safely shutdown the pi. The shutdown -h now command is commented out for your convenience but the screen should show a countdown timer and bring down the volume in a fade out fashion.
+10. Optional: Use moode-oled-shutdown.sh script on a GPIO pin (9) in Moode to shutdown the OLED and then the system on button press. Do this by going in the Moode Web UI to Configure -> System -> GPIO Button Handler -> Edit. OR use the script in your favouirte place to safely shutdown the pi. The shutdown -h now command is commented out for your convenience but the screen should show a countdown timer and bring down the volume in a fade out fashion.
 <br><br><br>
 
 # Notes
+NOTE: For 32p resolution screens edit the splash screen script comment out the 64 line and uncomment the 32 line, rename moode-oled-mod.py to moode-oled-mod-64.py and rename moode-oled-mod-32.py to moode-oled-mod.py 
+
 NOTE: The original script remains in this repo, the new one has -mod at the end of the filename. If the original script this was forked from is still running, the modifed script can seek the PID of that script and kill it. Having the main screen script run multiple times causes the "weird characters" on the display. The shutdown script also tries to kill the process of the main script for this reason. If these screen glitches are occuring it's because there are multiple scripts trying to update the same screen once a second. Search your favorite search engine for process kill commands.<br><br>
 
 A helpful command to rescue the screen is<br>
