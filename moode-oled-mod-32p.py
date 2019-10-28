@@ -39,10 +39,10 @@ SPI_PORT = 0
 SPI_DEVICE = 0
 
 # 128x32 display with hardware I2C:
-# disp = Adafruit_SSD1306.SSD1306_128_32(rst=RST)
+disp = Adafruit_SSD1306.SSD1306_128_32(rst=RST)
 
 # 128x64 display with hardware I2C:
-disp = Adafruit_SSD1306.SSD1306_128_64(rst=RST)
+# disp = Adafruit_SSD1306.SSD1306_128_64(rst=RST)
 
 # 128x32 display with hardware SPI:
 # disp = Adafruit_SSD1306.SSD1306_128_32(rst=RST, dc=DC, spi=SPI.SpiDev(SPI_PORT, SPI_DEVICE, max_speed_hz=8000000))
@@ -162,13 +162,12 @@ class MPDConnect(object):
         
         
         # MOODE current song for Radio Station - Enrich OLED Output
-        if path.exists('/var/local/www/currentsong.txt'):
-            with open('/var/local/www/currentsong.txt') as nowplaying:
-                nowplayingmeta  = list(nowplaying)
-                if len(nowplayingmeta) > 0:
-                    callsign  = nowplayingmeta[1]
-                else:
-                    callsign  = "Radio station" 
+        with open('/var/local/www/currentsong.txt') as nowplaying:
+            nowplayingmeta  = list(nowplaying)
+            if len(nowplayingmeta) > 0:
+                callsign  = nowplayingmeta[1]
+            else:
+                callsign  = "Radio station" 
         
         if 'Radio station' in callsign:
             
@@ -322,10 +321,10 @@ def main():
     image = Image.new('1', (width, height))
 
     # Load default font.
-    font_artist = ImageFont.truetype('/home/pi/MoodeAudio-OLED/Arial-Unicode-Bold.ttf', 13)
-    font_title = ImageFont.truetype('/home/pi/MoodeAudio-OLED/Arial-Unicode-Regular.ttf', 12)
+    font_artist = ImageFont.truetype('/home/pi/MoodeAudio-OLED/Arial-Unicode-Regular.ttf', 11)
+    font_title = ImageFont.truetype('/home/pi/MoodeAudio-OLED/Arial-Unicode-Bold.ttf', 12)
     font_info = ImageFont.truetype('/home/pi/MoodeAudio-OLED/Verdana-Italic.ttf', 9)
-    font_time = ImageFont.truetype('/home/pi/MoodeAudio-OLED/Verdana.ttf', 12)
+    font_time = ImageFont.truetype('/home/pi/MoodeAudio-OLED/Verdana.ttf', 11)
 
     # Create drawing object.
     draw = ImageDraw.Draw(image)
@@ -366,7 +365,14 @@ def main():
         if state == 'play':
             totaltime = int(totaltime) + 1
         
+        # Roll up two lines on to one and add bitrate into this line also
+        combine     = artist + " ( " + audio + " ) " + "   :   " + title
+        # But if tuning don't do the semi colon
+        if "Tuning ..." in title:
+            combine = title
+        
     
+  
         hostname    = info['hostname']
         hostip      = info['hostip']
         
@@ -384,7 +390,7 @@ def main():
             #    artoffset = 100
 
         # Position text of Title
-        titwd,titz = draw.textsize(unicode(title), font=font_title)
+        titwd,titz = draw.textsize(unicode(combine), font=font_title)
 
 	# Title animate
 	if titwd < width:
@@ -409,22 +415,23 @@ def main():
             oven    = kitchen.split("=")
             rack    = oven[1].split(".")
             pibaked = rack[0]
+                        
+            draw.text((30,0), hostip, font=font_title, fill=255)
+            draw.text((0,16), "Stop ", font=font_time, fill=255)
+            draw.text((80,16), "cpu: " +  str(pibaked) , font=font_time, fill=255)
             
-            # Draw text
-            draw.text((35,top), hostname, font=font_artist, fill=255)
-            draw.text((20,20), hostip, font=font_time, fill=255)
-            draw.text((padding,45), "Stop ", font=font_time, fill=255)
-            draw.text((70,45), "cpu: " +  str(pibaked) + "c" , font=font_time, fill=255)
         else:
+            
+            
+            
             # Draw text.
-            draw.text((artx,top), unicode(artist), font=font_artist, fill=255)
-            draw.text((titx,20), unicode(title), font=font_title, fill=255)
-            draw.text((padding,45), eltime, font=font_time, fill=255)
-            draw.text((75,45), "vol: " +  str(vol) , font=font_time, fill=255)
+            draw.text((titx,0), unicode(combine), font=font_title, fill=255)
+            draw.text((0,16), eltime, font=font_time, fill=255)
+            draw.text((80,16), "vol: " +  str(vol) , font=font_time, fill=255)
         
         # Pause briefly before drawing next frame.
-        # Update Slower on Larger Screen
-        time.sleep(0.5)
+        # Update faster on smaller screen
+        time.sleep(0.3)
         
         
         
