@@ -12,7 +12,8 @@ This is a forked version of the original script by naisema with some major tweak
 4. Stations that don't show a now playing field, instead diplay bitrate (which updates kbps if VBR)
 5. Splashscreen on loading that shows the Moode logo!<br>
 6. Display of hostname, IP Address and CPU temperature in place of volume when MPD state shows no media playing<br>
-7. Shutdown screen with countdown that can be tied to a GPIO pin
+8. Display of data usage instead of time elapsed if currentdata.txt file setup
+9. Shutdown screen with countdown that can be tied to a GPIO pin
 
 ![New Splashscreen](https://raw.githubusercontent.com/duracell80/MoodeAudio-OLED/master/example-splash.jpg)
 
