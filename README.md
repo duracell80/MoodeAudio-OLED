@@ -10,7 +10,7 @@ This is a forked version of the original script by naisema with some major tweak
 2. Better handling of metadata from radio stations<br>
 3. When "changing stations" the screen will say "Tuning ..."<br>
 4. Splashscreen on loading that shows the Moode logo!<br>
-5. Display of hostname and IP Address when MPD state shows no media playing<br>
+5. Display of hostname, IP Address and CPU temperature in place of volume when MPD state shows no media playing<br>
 6. Shutdown screen with countdown that can be tied to a GPIO pin
 
 ![New Splashscreen](https://raw.githubusercontent.com/duracell80/MoodeAudio-OLED/master/example-splash.jpg)
