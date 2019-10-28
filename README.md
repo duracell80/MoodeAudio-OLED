@@ -24,7 +24,7 @@ This is a forked version of the original script by naisema with some major tweak
 # Installation
 
 1. Login to MoodeAudio with user pi and password moodeaudio
-2. Ran raspi-config and enabled i2c and auto login<br><br>
+2. Ran raspi-config and enable i2c and auto login<br><br>
 
 <strong>How To Make Moode Auto Login</strong><br>
 Run: sudo raspi-config
