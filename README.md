@@ -72,7 +72,7 @@ Select Finish, and reboot the pi.
 <br><br><br>
 
 # Notes
-NOTE: For 32p resolution screens edit the splash screen script comment out the 64 line and uncomment the 32 line, rename moode-oled-mod.py to moode-oled-mod-64.py and rename moode-oled-mod-32.py to moode-oled-mod.py 
+NOTE: For 32p resolution screens edit the splash screen script comment out the 64 line and uncomment the 32 line, rename moode-oled-mod.py to moode-oled-mod-64p.py and rename moode-oled-mod-32p.py to moode-oled-mod.py 
 
 NOTE: The original script remains in this repo, the new one has -mod at the end of the filename. If the original script this was forked from is still running, the modifed script can seek the PID of that script and kill it. Having the main screen script run multiple times causes the "weird characters" on the display. The shutdown script also tries to kill the process of the main script for this reason. If these screen glitches are occuring it's because there are multiple scripts trying to update the same screen once a second. Search your favorite search engine for process kill commands.<br><br>
 
