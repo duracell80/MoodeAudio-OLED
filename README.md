@@ -47,7 +47,7 @@ Select Finish, and reboot the pi.
    $ cd Adafruit_Python_SSD1306 <br />
    $ sudo python setup.py install <br />
 6. Download python script from github <br />
-   $ git clone https://github.com/naisema/MoodeAudio-OLED.git <br />
+   $ git clone https://github.com/duracell80/MoodeAudio-OLED.git <br />
 7. Go to MoodAudio UI menu -> Configure -> System -> Local Services
    Enable the metadata file (currentsong.txt) and toggle the LCD Update Engine on <br /><br />
 
