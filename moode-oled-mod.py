@@ -58,6 +58,8 @@ s.connect(("1.1.1.1", 80))
 hostname   = socket.gethostname()
 hostip     = s.getsockname()[0]
 
+# Start MPD Seek Rotary Encoder Monitor
+# os.system("python /home/pi/MoodeAudio-OLED/rotseek.py")
 
 # MPD Client
 class MPDConnect(object):
@@ -267,7 +269,7 @@ class MPDConnect(object):
             
             # Track Data Usage Instead Of Time
             if path.exists('/var/local/www/currentdata.txt'):
-                os.system('sudo ifconfig eth0 > /var/local/www/currentdata.txt')
+                os.system('sudo ifconfig wlan0 > /var/local/www/currentdata.txt')
 
                 with open('/var/local/www/currentdata.txt') as ifdata:
                     datalist  = list(ifdata)
